@@ -108,6 +108,15 @@ a { color: var(--color-accent); }
   padding: 0.3em 0.5em;
 }
 
+.foto-profilo {
+  display: block;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.8rem;
+}
+
 .ruolo {
   font-family: var(--font-mono);
   font-size: 0.95rem;
@@ -273,7 +282,10 @@ a { color: var(--color-accent); }
 }
 
 .segnaposto-immagine {
+  display: block;
+  width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
   background:
     repeating-linear-gradient(
       135deg,

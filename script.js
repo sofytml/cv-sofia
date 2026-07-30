@@ -6,7 +6,12 @@
 */
 
 // ---- INTESTAZIONE ----
+const fotoProfiloHtml = cvData.profilo.foto
+  ? `<img class="foto-profilo prong-frame" src="${cvData.profilo.foto}" alt="Foto di ${cvData.profilo.nome}">`
+  : "";
+
 document.getElementById("hero").innerHTML = `
+  ${fotoProfiloHtml}
   <p class="eyebrow">Curriculum</p>
   <h1 class="prong-frame">${cvData.profilo.nome}</h1>
   <p class="ruolo">${cvData.profilo.ruolo} — ${cvData.profilo.citta}</p>
@@ -94,14 +99,19 @@ document.getElementById("formazione").innerHTML = `
 
 // ---- PORTFOLIO ----
 const listaPortfolio = cvData.portfolio
-  .map(pezzo => `
-    <li class="scheda-pezzo">
-      <div class="segnaposto-immagine prong-frame"></div>
-      <p class="titolo-pezzo">${pezzo.titolo}</p>
-      <p class="materiale">${pezzo.materiale}</p>
-      <p class="descrizione">${pezzo.descrizione}</p>
-    </li>
-  `)
+  .map(pezzo => {
+    const immagineHtml = pezzo.immagine
+      ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}">`
+      : `<div class="segnaposto-immagine prong-frame"></div>`;
+    return `
+      <li class="scheda-pezzo">
+        ${immagineHtml}
+        <p class="titolo-pezzo">${pezzo.titolo}</p>
+        <p class="materiale">${pezzo.materiale}</p>
+        <p class="descrizione">${pezzo.descrizione}</p>
+      </li>
+    `;
+  })
   .join("");
 
 document.getElementById("portfolio").innerHTML = `
