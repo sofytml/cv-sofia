@@ -84,12 +84,18 @@ document.getElementById("lingue").innerHTML = `
 
 // ---- FORMAZIONE ----
 const listaFormazione = cvData.formazione
-  .map(voce => `
-    <li class="riga-formazione">
-      <span class="titolo">${voce.titolo}</span>
-      <span class="dettaglio">${voce.ente}${voce.periodo ? " · " + voce.periodo : ""}</span>
-    </li>
-  `)
+  .map(voce => {
+    const moduliHtml = voce.moduli
+      ? `<ul class="mansioni">${voce.moduli.map(m => `<li>${m}</li>`).join("")}</ul>`
+      : "";
+    return `
+      <li class="riga-formazione">
+        <span class="titolo">${voce.titolo}</span>
+        <span class="dettaglio">${voce.ente}${voce.periodo ? " · " + voce.periodo : ""}</span>
+        ${moduliHtml}
+      </li>
+    `;
+  })
   .join("");
 
 document.getElementById("formazione").innerHTML = `
