@@ -112,6 +112,7 @@ const cvData = {
       titolo: "Nome del pezzo",
       materiale: "Es. argento, granato",
       immagine: "IMG_8826.jpg",
+      posizione: "center 80%",
       descrizione: "Breve descrizione della lavorazione o della tecnica usata."
     }
   ],
