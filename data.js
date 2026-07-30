@@ -13,6 +13,7 @@ const cvData = {
     nome: "Sofia Tombolato",
     ruolo: "Orafa incastonatrice — Tecnico di progettazione e stampa 3D",
     citta: "Cittadella (PD)",
+    foto: "290AEB1B-1644-4E81-8B80-4D8AF018118D.jpg"
     bio: "Orafa incastonatrice con una solida formazione artistica e tecnica, specializzata anche in progettazione e stampa 3D con SolidWorks. Integro la modellazione digitale con la lavorazione artigianale del gioiello, dalla progettazione virtuale alla realizzazione fisica. Precisa, tenace e attenta alla qualità del made in Italy, oggi cerco di mettere a sistema competenze manuali e digitali per realizzare manufatti unici, anche attraverso tecnologie additive."
   },
 
@@ -104,11 +105,13 @@ const cvData = {
     {
       titolo: "Nome del pezzo",
       materiale: "Es. oro giallo, zaffiro",
+      immagine: "IMG_4310.jpg"
       descrizione: "Breve descrizione della lavorazione o della tecnica usata."
     },
     {
       titolo: "Nome del pezzo",
       materiale: "Es. argento, granato",
+      immagine: "IMG_8826.jpg"
       descrizione: "Breve descrizione della lavorazione o della tecnica usata."
     }
   ],
