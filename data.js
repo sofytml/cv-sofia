@@ -106,14 +106,14 @@ const cvData = {
       titolo: "Anello Floreale",
       materiale: "Oro giallo 18K e diamanti",
       immagine: "IMG_4310.jpg",
-      descrizione: "Breve descrizione della lavorazione o della tecnica usata."
+      descrizione: "Anello a forma di fiore, progettato per non avere alcuna griffa a vista. La pietra centrale è incastonata con la tecnica a 'notte' (battuto); attorno, due corone di petali di dimensioni crescenti, ciascuno impreziosito da un diamante. Le pietre dei petali esterni sono incastonate sotto ai petali più piccoli e fermate in punta da una grana."
     },
     {
       titolo: "Dettaglio anello con fish tail reverse",
       materiale: "Oro bianco 18K e diamanti",
       immagine: "IMG_8826.jpg",
       posizione: "center 83%",
-      descrizione: "Breve descrizione della lavorazione o della tecnica usata."
+      descrizione: "Dettaglio dell'incisione a fish tail lungo il bordo del castone di un anello — una tecnica incisoria che richiede estrema precisione."
     }
   ],
 
