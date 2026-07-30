@@ -110,8 +110,8 @@ a { color: var(--color-accent); }
 
 .foto-profilo {
   display: block;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.8rem;
