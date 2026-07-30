@@ -50,7 +50,7 @@ const cvData = {
   // ---- FORMAZIONE ----
   formazione: [
     {
-      titolo: "Competenze digitali specialistiche",
+      titolo: "Competenze digitali specialistiche (IA)",
       ente: "Infolingue Srl",
       periodo: "2026 — in corso"
     },
