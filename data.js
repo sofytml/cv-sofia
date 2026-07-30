@@ -11,7 +11,7 @@ const cvData = {
   // ---- INTESTAZIONE ----
   profilo: {
     nome: "Sofia Tombolato",
-    ruolo: "Orafa incastonatrice — Tecnico di progettazione e stampa 3D",
+    ruolo: "Orafa incastonatrice: Tecnico di progettazione e stampa 3D",
     citta: "Cittadella (PD)",
     foto: "290AEB1B-1644-4E81-8B80-4D8AF018118D.jpg",
     bio: "Orafa incastonatrice con una solida formazione artistica e tecnica, specializzata anche in progettazione e stampa 3D con SolidWorks. Integro la modellazione digitale con la lavorazione artigianale del gioiello, dalla progettazione virtuale alla realizzazione fisica. Precisa, tenace e attenta alla qualità del made in Italy, oggi cerco di mettere a sistema competenze manuali e digitali per realizzare manufatti unici, anche attraverso tecnologie additive."
@@ -55,7 +55,7 @@ const cvData = {
       periodo: "2026 — in corso"
     },
     {
-      titolo: "Tecnico di Progettazione e Stampa 3D con SolidWorks — 120 ore",
+      titolo: "Tecnico di Progettazione e Stampa 3D con SolidWorks: 120 ore",
       ente: "Infolingue Srl",
       periodo: "2026"
     },
@@ -75,7 +75,7 @@ const cvData = {
       periodo: "2021"
     },
     {
-      titolo: "Maturità artistica — indirizzo Arti Figurative",
+      titolo: "Maturità artistica: indirizzo Arti Figurative",
       ente: "Liceo Artistico \"M. Fanoli\", Cittadella (PD)",
       periodo: "2019"
     }
@@ -85,7 +85,7 @@ const cvData = {
   esperienza: [
     {
       ruolo: "Orafa & Incastonatrice",
-      azienda: "Gori Annalisa Gioielli — Vicenza (VI)",
+      azienda: "Gori Annalisa Gioielli: Vicenza (VI)",
       periodo: "01/2023 – 03/2026",
       mansioni: [
         "Incastonatura di pietre e diamanti al microscopio (Leica 30x), con standard di precisione elevati",
