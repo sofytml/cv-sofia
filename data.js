@@ -103,16 +103,16 @@ const cvData = {
   // ---- PORTFOLIO ---- (finché non hai foto, resta un segnaposto elegante)
   portfolio: [
     {
-      titolo: "Nome del pezzo",
-      materiale: "Es. oro giallo, zaffiro",
+      titolo: "Anello Floreale",
+      materiale: "Oro giallo 18K e diamanti",
       immagine: "IMG_4310.jpg",
       descrizione: "Breve descrizione della lavorazione o della tecnica usata."
     },
     {
-      titolo: "Nome del pezzo",
-      materiale: "Es. argento, granato",
+      titolo: "Dettaglio anello con fish tail reverse",
+      materiale: "Oro bianco 18K e diamanti",
       immagine: "IMG_8826.jpg",
-      posizione: "center 80%",
+      posizione: "center 83%",
       descrizione: "Breve descrizione della lavorazione o della tecnica usata."
     }
   ],
