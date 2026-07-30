@@ -100,8 +100,11 @@ document.getElementById("formazione").innerHTML = `
 // ---- PORTFOLIO ----
 const listaPortfolio = cvData.portfolio
   .map(pezzo => {
+    const stilePosizione = pezzo.posizione
+      ? ` style="object-position: ${pezzo.posizione};"`
+      : "";
     const immagineHtml = pezzo.immagine
-      ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}">`
+      ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}"${stilePosizione}>`
       : `<div class="segnaposto-immagine prong-frame"></div>`;
     return `
       <li class="scheda-pezzo">
