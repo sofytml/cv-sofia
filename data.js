@@ -24,7 +24,8 @@ const cvData = {
     "Saldatura a microfiamma e laser",
     "Lucidatura e finitura (lustreria)",
     "Incisione con Gravermax",
-    "Progettazione digitale 3D"
+    "Progettazione digitale 3D",
+    "Utilizzo di strumenti di intelligenza artificiale",
   ],
 
   // ---- SOFTWARE E STRUMENTI ----
@@ -48,6 +49,11 @@ const cvData = {
 
   // ---- FORMAZIONE ----
   formazione: [
+    {
+      titolo: "Competenze digitali specialistiche",
+      ente: "Infolingue Srl",
+      periodo: "2026 — in corso"
+    },
     {
       titolo: "Tecnico di Progettazione e Stampa 3D con SolidWorks — 120 ore",
       ente: "Infolingue Srl",
