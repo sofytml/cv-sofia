@@ -189,11 +189,14 @@ a { color: var(--color-accent); }
 }
 
 .pannello-dettaglio {
+  color: var(--color-ink-soft);
+}
+
+.dettaglio-competenza {
   margin-top: 1rem;
   padding: 1rem 1.2rem;
   background: var(--color-surface);
   border-left: 2px solid var(--color-metal);
-  color: var(--color-ink-soft);
   font-size: 0.92rem;
   line-height: 1.6;
 }
@@ -521,5 +524,13 @@ a { color: var(--color-accent); }
   .voce-esperienza,
   .scheda-pezzo {
     break-inside: avoid;
+  }
+  .dettaglio-competenza {
+    display: block !important;
+    margin-top: 0.3rem;
+    padding: 0;
+    background: none;
+    border-left: none;
+    font-size: 0.85em;
   }
 }

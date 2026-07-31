@@ -65,30 +65,36 @@ const listaCompetenze = cvData.competenze
   .map((voce, indice) => `<li class="tag" data-indice="${indice}" tabindex="0" role="button">${voce.nome}</li>`)
   .join("");
 
+const dettagliCompetenze = cvData.competenze
+  .map((voce, indice) => `
+    <div class="dettaglio-competenza" id="dettaglio-competenza-${indice}" hidden>
+      <strong>${voce.nome}:</strong> ${voce.dettaglio}
+    </div>
+  `)
+  .join("");
+
 document.getElementById("competenze").innerHTML = `
   <h2>Competenze</h2>
   <ul class="tag-list" id="lista-tag-competenze">${listaCompetenze}</ul>
-  <div class="pannello-dettaglio" id="pannello-competenze" hidden></div>
+  <div class="pannello-dettaglio" id="pannello-competenze">${dettagliCompetenze}</div>
 `;
 
-// al click (o tocco) su un tag, apre/chiude il pannello con la spiegazione.
-// un secondo click sullo stesso tag lo richiude.
+// al click (o tocco) su un tag, mostra/nasconde la SUA spiegazione.
+// un secondo click sullo stesso tag la richiude.
 const listaTagCompetenze = document.getElementById("lista-tag-competenze");
 const pannelloCompetenze = document.getElementById("pannello-competenze");
 
 function gestisciClickCompetenza(tag) {
   const indice = tag.dataset.indice;
+  const elementoDettaglio = document.getElementById(`dettaglio-competenza-${indice}`);
   const giaAperto = tag.classList.contains("tag-attivo");
 
   listaTagCompetenze.querySelectorAll(".tag").forEach(t => t.classList.remove("tag-attivo"));
+  pannelloCompetenze.querySelectorAll(".dettaglio-competenza").forEach(d => { d.hidden = true; });
 
-  if (giaAperto) {
-    pannelloCompetenze.hidden = true;
-    pannelloCompetenze.innerHTML = "";
-  } else {
+  if (!giaAperto) {
     tag.classList.add("tag-attivo");
-    pannelloCompetenze.hidden = false;
-    pannelloCompetenze.innerHTML = cvData.competenze[indice].dettaglio;
+    elementoDettaglio.hidden = false;
   }
 }
 
