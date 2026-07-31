@@ -150,8 +150,7 @@ const cvData = {
     {
       titolo: "Croce",
       materiale: "Oro bianco 18K, diamanti",
-      immagine: "3.jpg",
-      adatta: "contain",
+      immagine: "4.jpg",
       descrizione: "Ciondolo a forma di croce, interamente pavé di diamanti 33mm cadauno, pezzo unico. Dalla fusione al pezzo finito, lucidato e rodiato con catena a maglia scatolata."
     },
     {
