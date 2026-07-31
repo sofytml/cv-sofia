@@ -127,6 +127,7 @@ const cvData = {
   contatti: {
     telefono: "+39 333 352 0528",
     email: "tombolatosofia@gmail.com",
+    linkedin: "https://www.linkedin.com/in/sofia-tombolato-7829a621b",
     patente: "Patente B, automunita",
     categoriaProtetta: "Iscritta alla L. 68/99 (Provincia di Padova), Collocamento mirato",
     noteGdpr: "Autorizzo il trattamento dei miei dati personali ai sensi del D.Lgs. 196/2003 e dell'art. 13 GDPR."
