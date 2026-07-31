@@ -165,7 +165,7 @@ const cvData = {
       titolo: "Anello a contrariè",
       materiale: "Oro bianco 18K, diamanti",
       immagine: "1.jpg",
-      posizione: "30% center",
+      posizione: "20% center",
       descrizione: "Anello contrariè a fascia aperta, con pavé di diamanti tagliata interamente a mano da pezzo integro. Svasata e incassata con progetto comprendente 4 misure di pietre. da 1,50 mm a 1,10 mm."
     },
   ],
