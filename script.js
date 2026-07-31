@@ -149,3 +149,8 @@ document.getElementById("contatti").innerHTML = `
 // ---- DATA IN FONDO ALLA PAGINA ----
 document.getElementById("data-aggiornamento").textContent =
   new Date().toLocaleDateString("it-IT", { year: "numeric", month: "long", day: "numeric" });
+
+// ---- PULSANTE DOWNLOAD PDF ----
+document.getElementById("bottone-pdf").addEventListener("click", () => {
+  window.print();
+});

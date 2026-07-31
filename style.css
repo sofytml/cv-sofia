@@ -365,10 +365,44 @@ a { color: var(--color-accent); }
   color: var(--color-ink-soft);
 }
 
+.bottone-pdf {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.8rem 1.4rem;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: background 0.15s ease;
+  z-index: 100;
+}
+
+.bottone-pdf:hover {
+  background: var(--color-accent);
+}
+
 /* ============================================================
-   STAMPA / EXPORT PDF — anticipiamo già la leggibilità in stampa
+   STAMPA / EXPORT PDF
    ============================================================ */
 @media print {
-  body { background: white; }
-  .section { border-top: 1px solid #ccc; }
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  .section {
+    border-top: 1px solid #ccc;
+    break-inside: avoid;
+  }
+  .voce-esperienza,
+  .scheda-pezzo {
+    break-inside: avoid;
+  }
 }
