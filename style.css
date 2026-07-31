@@ -391,11 +391,18 @@ a { color: var(--color-accent); }
    STAMPA / EXPORT PDF
    ============================================================ */
 @media print {
+  html {
+    font-size: 10px;
+  }
   .no-print {
     display: none !important;
   }
   body {
     background: white;
+  }
+  .foto-profilo {
+    width: 70px;
+    height: 70px;
   }
   .section {
     border-top: 1px solid #ccc;
