@@ -30,11 +30,24 @@ const listaEsperienza = cvData.esperienza
     const bullet = voce.mansioni
       .map(riga => `<li>${riga}</li>`)
       .join("");
+    const logoHtml = voce.logo
+      ? `<img class="logo-azienda" src="${voce.logo}" alt="Logo ${voce.azienda}">`
+      : "";
+    const linkSito = voce.sito ? `<a href="${voce.sito}" target="_blank" rel="noopener">Sito</a>` : "";
+    const linkInstagram = voce.instagram ? `<a href="${voce.instagram}" target="_blank" rel="noopener">Instagram</a>` : "";
+    const separatore = linkSito && linkInstagram ? " · " : "";
+    const linkAzienda = (linkSito || linkInstagram)
+      ? `<p class="link-azienda">${linkSito}${separatore}${linkInstagram}</p>`
+      : "";
     return `
       <li class="voce-esperienza">
         <p class="periodo">${voce.periodo}</p>
         <div>
-          <p class="ruolo-azienda"><strong>${voce.ruolo}</strong> presso ${voce.azienda}</p>
+          <div class="intestazione-esperienza">
+            ${logoHtml}
+            <p class="ruolo-azienda"><strong>${voce.ruolo}</strong> presso ${voce.azienda}</p>
+          </div>
+          ${linkAzienda}
           <ul class="mansioni">${bullet}</ul>
         </div>
       </li>
