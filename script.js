@@ -58,8 +58,32 @@ document.getElementById("competenze").innerHTML = `
 `;
 
 // ---- SOFTWARE E STRUMENTI ----
+const ICONE_SOFTWARE = {
+  cubo: '<svg viewBox="0 0 20 20"><path d="M10 2 L17 6 L17 14 L10 18 L3 14 L3 6 Z M10 2 L10 10 M10 10 L17 6 M10 10 L3 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>',
+  penna: '<svg viewBox="0 0 20 20"><path d="M3 17 L4 13 L13 4 L16 7 L7 16 Z M13 4 L16 7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/></svg>',
+  immagine: '<svg viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="9" r="1.4" fill="currentColor"/><path d="M3 15 L8 10 L11 13 L14 9 L17 13" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>',
+  vettore: '<svg viewBox="0 0 20 20"><circle cx="4" cy="15" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="16" cy="5" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 14 C8 10 12 10 14.5 6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>',
+  documento: '<svg viewBox="0 0 20 20"><path d="M5 2 H12 L16 6 V18 H5 Z M12 2 V6 H16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.5 10 H13.5 M7.5 13 H13.5" stroke="currentColor" stroke-width="1.1"/></svg>',
+  nuvola: '<svg viewBox="0 0 20 20"><path d="M6 15 C3.5 15 2 13.2 2 11.3 C2 9.4 3.5 8 5.3 8 C5.7 5.5 8 4 10.2 4.7 C12 5.2 13 6.8 13 8.3 C15 8.3 17 9.8 17 12 C17 14 15.3 15 13.5 15 Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>',
+  ricevuta: '<svg viewBox="0 0 20 20"><path d="M5 2 H15 V18 L13 16.5 L11 18 L9 16.5 L7 18 L5 16.5 Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7.5 6 H12.5 M7.5 9 H12.5 M7.5 12 H10.5" stroke="currentColor" stroke-width="1.1"/></svg>'
+};
+
+// sceglie l'icona in base a parole chiave nel nome, così funziona
+// anche se modifichi leggermente il testo in data.js
+function iconaPerSoftware(nome) {
+  const n = nome.toLowerCase();
+  if (n.includes("solidworks") || n.includes("rhino")) return ICONE_SOFTWARE.cubo;
+  if (n.includes("procreate") || n.includes("illustrator")) return ICONE_SOFTWARE.penna;
+  if (n.includes("photoshop")) return ICONE_SOFTWARE.immagine;
+  if (n.includes("svg")) return ICONE_SOFTWARE.vettore;
+  if (n.includes("office")) return ICONE_SOFTWARE.documento;
+  if (n.includes("cloud")) return ICONE_SOFTWARE.nuvola;
+  if (n.includes("fattura")) return ICONE_SOFTWARE.ricevuta;
+  return ICONE_SOFTWARE.documento;
+}
+
 const listaSoftware = cvData.software
-  .map(voce => `<li class="tag">${voce}</li>`)
+  .map(voce => `<li class="tag tag-icona">${iconaPerSoftware(voce)}<span>${voce}</span></li>`)
   .join("");
 
 document.getElementById("software").innerHTML = `

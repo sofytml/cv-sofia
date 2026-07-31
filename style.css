@@ -181,6 +181,19 @@ a { color: var(--color-accent); }
   border-color: var(--color-metal);
 }
 
+.tag-icona {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.tag-icona svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-metal);
+}
+
 /* ============================================================
    FORMAZIONE
    ============================================================ */
