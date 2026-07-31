@@ -19,13 +19,34 @@ const cvData = {
 
   // ---- COMPETENZE ARTIGIANALI ----
   competenze: [
-    "Incastonatura di pietre e diamanti",
-    "Riparazione e restauro di gioielli",
-    "Saldatura a microfiamma e laser",
-    "Lucidatura e finitura (lustreria)",
-    "Incisione con Gravermax",
-    "Progettazione digitale 3D",
-    "Utilizzo di strumenti di intelligenza artificiale",
+     {
+      nome: "Incastonatura di pietre e diamanti",
+      dettaglio: "Sviluppata quotidianamente presso Gori Annalisa Gioielli, lavorando al microscopio (Leica 30x) su pietre e diamanti con standard qualitativi e di precisione elevati."
+    },
+    {
+      nome: "Riparazione e restauro di gioielli",
+      dettaglio: "Acquisita sul campo, restaurando e ripristinando gioielli danneggiati o usurati per la clientela."
+    },
+    {
+      nome: "Saldatura a microfiamma e laser",
+      dettaglio: "Tecnica per unire metalli preziosi, sia con strumenti tradizionali (microfiamma) sia con saldatrice laser per interventi di maggiore precisione."
+    },
+    {
+      nome: "Lucidatura e finitura (lustreria)",
+      dettaglio: "Rifinitura estetica dei pezzi, a mano e con macchine lucidatrici, per portare il gioiello alla qualità finale prima della consegna."
+    },
+    {
+      nome: "Incisione con Gravermax",
+      dettaglio: "Uso del Gravermax per incisioni artistiche e tecniche sul metallo, oltre a costruzione e affilatura dei bulini."
+    },
+    {
+      nome: "Progettazione digitale 3D",
+      dettaglio: "Acquisita con il corso Tecnico di Progettazione e Stampa 3D con SolidWorks (Infolingue, 2026): dalla modellazione virtuale alla stampa 3D del prototipo."
+    },
+    {
+      nome: "Utilizzo di strumenti di intelligenza artificiale",
+      dettaglio: "In fase di apprendimento nel corso Competenze digitali specialistiche (Infolingue, 2026, in corso)."
+    }
   ],
 
   // ---- SOFTWARE E STRUMENTI ----
