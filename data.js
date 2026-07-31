@@ -146,7 +146,7 @@ const cvData = {
       immagine: "IMG_8826.jpg",
       posizione: "center 83%",
       descrizione: "Dettaglio dell'incisione a fish tail lungo il bordo del castone di un anello, una tecnica incisoria che richiede estrema precisione."
-    }
+    },
     {
   titolo: "Croce",
   materiale: "Oro bianco, diamanti",
