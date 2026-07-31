@@ -212,8 +212,9 @@ const listaPortfolio = cvData.portfolio
     if (pezzo.posizione) stiliImmagine.push(`object-position: ${pezzo.posizione}`);
     if (pezzo.adatta) stiliImmagine.push(`object-fit: ${pezzo.adatta}`);
     const stileAttributo = stiliImmagine.length ? ` style="${stiliImmagine.join("; ")}"` : "";
+    const classeAdatta = pezzo.adatta ? " segnaposto-adatta" : "";
     const immagineHtml = pezzo.immagine
-      ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}"${stileAttributo}>`
+      ? `<img class="segnaposto-immagine prong-frame${classeAdatta}" src="${pezzo.immagine}" alt="${pezzo.titolo}"${stileAttributo}>`
       : `<div class="segnaposto-immagine prong-frame"></div>`;
     return `
       <li class="scheda-pezzo" data-indice="${indice}"${indice === 0 ? "" : " hidden"}>

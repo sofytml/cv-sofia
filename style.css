@@ -472,6 +472,10 @@ a { color: var(--color-accent); }
   margin: 8px 8px 1rem 8px; /* spazio per gli angoli a castone */
 }
 
+.segnaposto-immagine.segnaposto-adatta {
+  background: var(--color-surface);
+}
+
 .titolo-pezzo {
   font-weight: 600;
 }
