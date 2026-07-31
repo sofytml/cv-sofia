@@ -130,11 +130,14 @@ document.getElementById("portfolio").innerHTML = `
 
 // ---- CONTATTI E INFORMAZIONI ----
 const c = cvData.contatti;
+const telefonoPulito = c.telefono ? c.telefono.replace(/\D/g, "") : "";
+const messaggioWhatsapp = encodeURIComponent("Ciao Sofia, ho visto il tuo CV online e vorrei contattarti.");
+
 document.getElementById("contatti").innerHTML = `
   <h2>Contatti</h2>
   <ul class="lista-contatti">
     ${c.email ? `<li class="riga-contatto"><span class="etichetta">Email</span><span>${c.email}</span></li>` : ""}
-    ${c.telefono ? `<li class="riga-contatto"><span class="etichetta">Telefono</span><span>${c.telefono}</span></li>` : ""}
+    ${c.telefono ? `<li class="riga-contatto"><span class="etichetta">Telefono</span><a href="https://wa.me/${telefonoPulito}?text=${messaggioWhatsapp}" target="_blank" rel="noopener">${c.telefono}</a></li>` : ""}
     ${c.patente ? `<li class="riga-contatto"><span class="etichetta">Patente</span><span>${c.patente}</span></li>` : ""}
     ${c.categoriaProtetta ? `<li class="riga-contatto"><span class="etichetta">Collocamento</span><span>${c.categoriaProtetta}</span></li>` : ""}
   </ul>
