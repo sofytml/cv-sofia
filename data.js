@@ -87,6 +87,9 @@ const cvData = {
       ruolo: "Orafa & Incastonatrice",
       azienda: "Gori Annalisa Gioielli: Vicenza (VI)",
       periodo: "Da 01/2023 a 03/2026",
+      logo: "gori-logo.jpg",
+      sito: "https://goriannalisagioielli.it/",
+      instagram: "https://www.instagram.com/goriannalisagioielli/",
       mansioni: [
         "Incastonatura di pietre e diamanti al microscopio (Leica 30x), con standard di precisione elevati",
         "Gestione dell'intero ciclo produttivo del gioiello: fusione, assemblaggio, incastonatura, finitura, rodiatura",
@@ -100,6 +103,8 @@ const cvData = {
       ruolo: "Stage formativo",
       azienda: "Patros S.r.l.",
       periodo: "Da 09/2022 a 12/2022",
+      logo: "patros-logo.jpg",
+      sito: "https://patrosgioielli.com/",
       mansioni: [
         "Incastonatura in produzione, saldatura laser e utilizzo del microscopio in un contesto aziendale strutturato"
       ]
