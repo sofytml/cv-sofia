@@ -62,13 +62,50 @@ document.getElementById("esperienza").innerHTML = `
 
 // ---- COMPETENZE ----
 const listaCompetenze = cvData.competenze
-  .map(voce => `<li class="tag">${voce}</li>`)
+  .map((voce, indice) => `<li class="tag" data-indice="${indice}" tabindex="0" role="button">${voce.nome}</li>`)
   .join("");
 
 document.getElementById("competenze").innerHTML = `
   <h2>Competenze</h2>
-  <ul class="tag-list">${listaCompetenze}</ul>
+  <ul class="tag-list" id="lista-tag-competenze">${listaCompetenze}</ul>
+  <div class="pannello-dettaglio" id="pannello-competenze" hidden></div>
 `;
+
+// al click (o tocco) su un tag, apre/chiude il pannello con la spiegazione.
+// un secondo click sullo stesso tag lo richiude.
+const listaTagCompetenze = document.getElementById("lista-tag-competenze");
+const pannelloCompetenze = document.getElementById("pannello-competenze");
+
+function gestisciClickCompetenza(tag) {
+  const indice = tag.dataset.indice;
+  const giaAperto = tag.classList.contains("tag-attivo");
+
+  listaTagCompetenze.querySelectorAll(".tag").forEach(t => t.classList.remove("tag-attivo"));
+
+  if (giaAperto) {
+    pannelloCompetenze.hidden = true;
+    pannelloCompetenze.innerHTML = "";
+  } else {
+    tag.classList.add("tag-attivo");
+    pannelloCompetenze.hidden = false;
+    pannelloCompetenze.innerHTML = cvData.competenze[indice].dettaglio;
+  }
+}
+
+listaTagCompetenze.addEventListener("click", (evento) => {
+  const tag = evento.target.closest(".tag");
+  if (tag) gestisciClickCompetenza(tag);
+});
+
+listaTagCompetenze.addEventListener("keydown", (evento) => {
+  if (evento.key === "Enter" || evento.key === " ") {
+    const tag = evento.target.closest(".tag");
+    if (tag) {
+      evento.preventDefault();
+      gestisciClickCompetenza(tag);
+    }
+  }
+});
 
 // ---- SOFTWARE E STRUMENTI ----
 const ICONE_SOFTWARE = {
