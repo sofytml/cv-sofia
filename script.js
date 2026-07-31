@@ -113,9 +113,10 @@ const listaFormazione = cvData.formazione
       ? `<ul class="mansioni">${voce.moduli.map(m => `<li>${m}</li>`).join("")}</ul>`
       : "";
     return `
-      <li class="riga-formazione">
-        <span class="titolo">${voce.titolo}</span>
-        <span class="dettaglio">${voce.ente}${voce.periodo ? " · " + voce.periodo : ""}</span>
+      <li class="tappa">
+        <p class="periodo-formazione">${voce.periodo}</p>
+        <p class="titolo">${voce.titolo}</p>
+        <p class="dettaglio">${voce.ente}</p>
         ${moduliHtml}
       </li>
     `;
@@ -124,7 +125,7 @@ const listaFormazione = cvData.formazione
 
 document.getElementById("formazione").innerHTML = `
   <h2>Formazione</h2>
-  <ul class="lista-formazione">${listaFormazione}</ul>
+  <ul class="timeline">${listaFormazione}</ul>
 `;
 
 // ---- PORTFOLIO ----

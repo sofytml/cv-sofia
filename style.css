@@ -219,6 +219,51 @@ a { color: var(--color-accent); }
   color: var(--color-ink-soft);
 }
 
+/* Formazione: linea del tempo verticale */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.tappa {
+  position: relative;
+  padding-left: 1.4rem;
+  border-left: 1px solid var(--color-border);
+}
+
+.tappa::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0.3em;
+  width: 8px;
+  height: 8px;
+  background: var(--color-metal);
+  transform: rotate(45deg);
+}
+
+.tappa .periodo-formazione {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-metal);
+  margin-bottom: 0.3rem;
+}
+
+.tappa .titolo {
+  font-weight: 600;
+}
+
+.tappa .dettaglio {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.tappa .mansioni {
+  margin-top: 0.6rem;
+}
+
 /* ============================================================
    ESPERIENZA — impaginazione a due colonne: periodo | contenuto
    ============================================================ */
