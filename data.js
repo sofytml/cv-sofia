@@ -52,7 +52,7 @@ const cvData = {
     {
       titolo: "Competenze digitali specialistiche (IA)",
       ente: "Infolingue Srl",
-      periodo: "2026 — in corso"
+      periodo: "2026"
     },
     {
       titolo: "Tecnico di Progettazione e Stampa 3D con SolidWorks: 120 ore",
@@ -60,7 +60,7 @@ const cvData = {
       periodo: "2026"
     },
     {
-      titolo: "Corso di specializzazione — Academy Bulgari",
+      titolo: "Corso di specializzazione (Academy Bulgari)",
       ente: "Scuola Arte e Mestieri di Vicenza",
       periodo: "2022"
     },
@@ -86,7 +86,7 @@ const cvData = {
     {
       ruolo: "Orafa & Incastonatrice",
       azienda: "Gori Annalisa Gioielli: Vicenza (VI)",
-      periodo: "01/2023 – 03/2026",
+      periodo: "Da 01/2023 a 03/2026",
       mansioni: [
         "Incastonatura di pietre e diamanti al microscopio (Leica 30x), con standard di precisione elevati",
         "Gestione dell'intero ciclo produttivo del gioiello: fusione, assemblaggio, incastonatura, finitura, rodiatura",
@@ -99,7 +99,7 @@ const cvData = {
     {
       ruolo: "Stage formativo",
       azienda: "Patros S.r.l.",
-      periodo: "09/2022 – 12/2022",
+      periodo: "Da 09/2022 a 12/2022",
       mansioni: [
         "Incastonatura in produzione, saldatura laser e utilizzo del microscopio in un contesto aziendale strutturato"
       ]
@@ -119,7 +119,7 @@ const cvData = {
       materiale: "Oro bianco 18K e diamanti",
       immagine: "IMG_8826.jpg",
       posizione: "center 83%",
-      descrizione: "Dettaglio dell'incisione a fish tail lungo il bordo del castone di un anello — una tecnica incisoria che richiede estrema precisione."
+      descrizione: "Dettaglio dell'incisione a fish tail lungo il bordo del castone di un anello, una tecnica incisoria che richiede estrema precisione."
     }
   ],
 
@@ -128,7 +128,7 @@ const cvData = {
     telefono: "+39 333 352 0528",
     email: "tombolatosofia@gmail.com",
     patente: "Patente B, automunita",
-    categoriaProtetta: "Iscritta alla L. 68/99 (Provincia di Padova) — Collocamento mirato",
+    categoriaProtetta: "Iscritta alla L. 68/99 (Provincia di Padova), Collocamento mirato",
     noteGdpr: "Autorizzo il trattamento dei miei dati personali ai sensi del D.Lgs. 196/2003 e dell'art. 13 GDPR."
   }
 
