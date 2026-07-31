@@ -208,11 +208,12 @@ document.getElementById("formazione").innerHTML = `
 // ---- PORTFOLIO ----
 const listaPortfolio = cvData.portfolio
   .map((pezzo, indice) => {
-    const stilePosizione = pezzo.posizione
-      ? ` style="object-position: ${pezzo.posizione};"`
-      : "";
+    const stiliImmagine = [];
+    if (pezzo.posizione) stiliImmagine.push(`object-position: ${pezzo.posizione}`);
+    if (pezzo.adatta) stiliImmagine.push(`object-fit: ${pezzo.adatta}`);
+    const stileAttributo = stiliImmagine.length ? ` style="${stiliImmagine.join("; ")}"` : "";
     const immagineHtml = pezzo.immagine
-      ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}"${stilePosizione}>`
+      ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}"${stileAttributo}>`
       : `<div class="segnaposto-immagine prong-frame"></div>`;
     return `
       <li class="scheda-pezzo" data-indice="${indice}"${indice === 0 ? "" : " hidden"}>
