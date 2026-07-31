@@ -165,6 +165,7 @@ document.getElementById("contatti").innerHTML = `
   <ul class="lista-contatti">
     ${c.email ? `<li class="riga-contatto"><span class="etichetta">Email</span><a href="mailto:${c.email}?subject=${oggettoEmail}&body=${corpoEmail}">${c.email}</a></li>` : ""}
     ${c.telefono ? `<li class="riga-contatto"><span class="etichetta">Telefono</span><a href="https://wa.me/${telefonoPulito}?text=${messaggioWhatsapp}" target="_blank" rel="noopener">${c.telefono}</a></li>` : ""}
+    ${c.linkedin ? `<li class="riga-contatto"><span class="etichetta">LinkedIn</span><a href="${c.linkedin}" target="_blank" rel="noopener">Vedi profilo</a></li>` : ""}
     ${c.patente ? `<li class="riga-contatto"><span class="etichetta">Patente</span><span>${c.patente}</span></li>` : ""}
     ${c.categoriaProtetta ? `<li class="riga-contatto"><span class="etichetta">Collocamento</span><span>${c.categoriaProtetta}</span></li>` : ""}
   </ul>
