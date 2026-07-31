@@ -14,7 +14,7 @@ document.getElementById("hero").innerHTML = `
   ${fotoProfiloHtml}
   <p class="eyebrow">Curriculum</p>
   <h1 class="prong-frame">${cvData.profilo.nome}</h1>
-  <p class="ruolo">${cvData.profilo.ruolo} — ${cvData.profilo.citta}</p>
+  <p class="ruolo">${cvData.profilo.ruolo}, ${cvData.profilo.citta}</p>
 `;
 
 // ---- CHI SONO ----
@@ -34,7 +34,7 @@ const listaEsperienza = cvData.esperienza
       <li class="voce-esperienza">
         <p class="periodo">${voce.periodo}</p>
         <div>
-          <p class="ruolo-azienda"><strong>${voce.ruolo}</strong> — ${voce.azienda}</p>
+          <p class="ruolo-azienda"><strong>${voce.ruolo}</strong> presso ${voce.azienda}</p>
           <ul class="mansioni">${bullet}</ul>
         </div>
       </li>
