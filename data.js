@@ -153,18 +153,18 @@ const cvData = {
       immagine: "3.jpg",
       descrizione: "Ciondolo a forma di croce, interamente pavé di diamanti 33mm cadauno, pezzo unico. Dalla fusione al pezzo finito, lucidato e rodiato con catena a maglia scatolata."
     },
-  {
-    titolo: "Anello con doppio alone",
-    materiale: "Oro, diamanti",
-    immagine: "2.jpg",
-    descrizione: "Anello preincassato con diamante centrale circondato da un doppio alone pavé, ripreso durante la lavorazione al banco prima della lucidatura."
-  },
     {
-    titolo: "Anello a contrariè",
-    materiale: "Oro, diamanti",
-    immagine: "1.jpg",
-    descrizione: "Anello contrariè a fascia aperta, con pavé di diamanti tagliata interamente a mano da pezzo integro. Svasata e incassata con progetto comprendente 4 misure di pietre. da 1,50 mm a 1,10 mm."
-},
+      titolo: "Anello con doppio alone",
+      materiale: "Oro, diamanti",
+      immagine: "2.jpg",
+      descrizione: "Anello preincassato con diamante centrale circondato da un doppio alone pavé, ripreso durante la lavorazione al banco prima della lucidatura."
+    },
+    {
+      titolo: "Anello a contrariè",
+      materiale: "Oro, diamanti",
+      immagine: "1.jpg",
+      descrizione: "Anello contrariè a fascia aperta, con pavé di diamanti tagliata interamente a mano da pezzo integro. Svasata e incassata con progetto comprendente 4 misure di pietre. da 1,50 mm a 1,10 mm."
+    },
   ],
 
   // ---- CONTATTI E INFORMAZIONI ----
