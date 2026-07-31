@@ -321,6 +321,18 @@ a { color: var(--color-accent); }
   margin-bottom: 0;
 }
 
+.attivatore-esperienza {
+  cursor: pointer;
+}
+
+.icona-toggle {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  color: var(--color-metal);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
 .logo-azienda {
   height: 28px;
   width: auto;
@@ -382,10 +394,55 @@ a { color: var(--color-accent); }
 /* ============================================================
    PORTFOLIO
    ============================================================ */
+.slider-portfolio {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
 .griglia-portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 2.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.freccia-slider {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.freccia-slider:hover {
+  border-color: var(--color-metal);
+  color: var(--color-accent);
+}
+
+.punti-slider {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.punto-slider {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border);
+  cursor: pointer;
+  padding: 0;
+}
+
+.punto-slider.punto-attivo {
+  background: var(--color-metal);
 }
 
 .scheda-pezzo {
@@ -532,5 +589,19 @@ a { color: var(--color-accent); }
     background: none;
     border-left: none;
     font-size: 0.85em;
+  }
+  .mansioni {
+    display: flex !important;
+  }
+  .icona-toggle {
+    display: none;
+  }
+  .scheda-pezzo {
+    display: flex !important;
+  }
+  .griglia-portfolio {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
   }
 }

@@ -26,7 +26,7 @@ document.getElementById("chi-sono").innerHTML = `
 // ---- ESPERIENZA ----
 // per ogni esperienza, trasforma l'elenco "mansioni" in una lista puntata
 const listaEsperienza = cvData.esperienza
-  .map(voce => {
+  .map((voce, indice) => {
     const bullet = voce.mansioni
       .map(riga => `<li>${riga}</li>`)
       .join("");
@@ -39,16 +39,18 @@ const listaEsperienza = cvData.esperienza
     const linkAzienda = (linkSito || linkInstagram)
       ? `<p class="link-azienda">${linkSito}${separatore}${linkInstagram}</p>`
       : "";
+    const apertoDiDefault = indice === 0; // la più recente parte già aperta
     return `
       <li class="voce-esperienza">
         <p class="periodo">${voce.periodo}</p>
         <div>
-          <div class="intestazione-esperienza">
+          <div class="intestazione-esperienza attivatore-esperienza" data-indice="${indice}" tabindex="0" role="button" aria-expanded="${apertoDiDefault}">
             ${logoHtml}
             <p class="ruolo-azienda"><strong>${voce.ruolo}</strong> presso ${voce.azienda}</p>
+            <span class="icona-toggle">${apertoDiDefault ? "−" : "+"}</span>
           </div>
           ${linkAzienda}
-          <ul class="mansioni">${bullet}</ul>
+          <ul class="mansioni" id="mansioni-esperienza-${indice}"${apertoDiDefault ? "" : " hidden"}>${bullet}</ul>
         </div>
       </li>
     `;
@@ -59,6 +61,25 @@ document.getElementById("esperienza").innerHTML = `
   <h2>Esperienza</h2>
   <ul class="lista-esperienza">${listaEsperienza}</ul>
 `;
+
+function alternaEsperienza(attivatore) {
+  const indice = attivatore.dataset.indice;
+  const mansioni = document.getElementById(`mansioni-esperienza-${indice}`);
+  const staAprendo = mansioni.hidden;
+  mansioni.hidden = !staAprendo;
+  attivatore.setAttribute("aria-expanded", String(staAprendo));
+  attivatore.querySelector(".icona-toggle").textContent = staAprendo ? "−" : "+";
+}
+
+document.querySelectorAll(".attivatore-esperienza").forEach(attivatore => {
+  attivatore.addEventListener("click", () => alternaEsperienza(attivatore));
+  attivatore.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter" || evento.key === " ") {
+      evento.preventDefault();
+      alternaEsperienza(attivatore);
+    }
+  });
+});
 
 // ---- COMPETENZE ----
 const listaCompetenze = cvData.competenze
@@ -186,7 +207,7 @@ document.getElementById("formazione").innerHTML = `
 
 // ---- PORTFOLIO ----
 const listaPortfolio = cvData.portfolio
-  .map(pezzo => {
+  .map((pezzo, indice) => {
     const stilePosizione = pezzo.posizione
       ? ` style="object-position: ${pezzo.posizione};"`
       : "";
@@ -194,7 +215,7 @@ const listaPortfolio = cvData.portfolio
       ? `<img class="segnaposto-immagine prong-frame" src="${pezzo.immagine}" alt="${pezzo.titolo}"${stilePosizione}>`
       : `<div class="segnaposto-immagine prong-frame"></div>`;
     return `
-      <li class="scheda-pezzo">
+      <li class="scheda-pezzo" data-indice="${indice}"${indice === 0 ? "" : " hidden"}>
         ${immagineHtml}
         <p class="titolo-pezzo">${pezzo.titolo}</p>
         <p class="materiale">${pezzo.materiale}</p>
@@ -204,10 +225,52 @@ const listaPortfolio = cvData.portfolio
   })
   .join("");
 
+const puntiPortfolio = cvData.portfolio
+  .map((_, indice) => `<button class="punto-slider${indice === 0 ? " punto-attivo" : ""}" data-indice="${indice}" aria-label="Vai al pezzo ${indice + 1}"></button>`)
+  .join("");
+
 document.getElementById("portfolio").innerHTML = `
   <h2>Portfolio</h2>
-  <ul class="griglia-portfolio">${listaPortfolio}</ul>
+  <div class="slider-portfolio">
+    <button class="freccia-slider freccia-sinistra no-print" aria-label="Pezzo precedente" type="button">‹</button>
+    <ul class="griglia-portfolio">${listaPortfolio}</ul>
+    <button class="freccia-slider freccia-destra no-print" aria-label="Pezzo successivo" type="button">›</button>
+  </div>
+  <div class="punti-slider no-print">${puntiPortfolio}</div>
 `;
+
+// gestione dello slider: mostra una sola scheda alla volta, il resto resta
+// nella pagina (nascosto) cosi in stampa puo comparire tutto
+let indicePortfolioAttivo = 0;
+const slidesPortfolio = document.querySelectorAll("#portfolio .scheda-pezzo");
+const puntiPortfolioEl = document.querySelectorAll("#portfolio .punto-slider");
+
+function mostraSlidePortfolio(nuovoIndice) {
+  slidesPortfolio.forEach((slide, i) => { slide.hidden = i !== nuovoIndice; });
+  puntiPortfolioEl.forEach((punto, i) => punto.classList.toggle("punto-attivo", i === nuovoIndice));
+  indicePortfolioAttivo = nuovoIndice;
+}
+
+const frecciaSinistra = document.querySelector("#portfolio .freccia-sinistra");
+const frecciaDestra = document.querySelector("#portfolio .freccia-destra");
+
+if (frecciaSinistra) {
+  frecciaSinistra.addEventListener("click", () => {
+    const nuovoIndice = (indicePortfolioAttivo - 1 + slidesPortfolio.length) % slidesPortfolio.length;
+    mostraSlidePortfolio(nuovoIndice);
+  });
+}
+
+if (frecciaDestra) {
+  frecciaDestra.addEventListener("click", () => {
+    const nuovoIndice = (indicePortfolioAttivo + 1) % slidesPortfolio.length;
+    mostraSlidePortfolio(nuovoIndice);
+  });
+}
+
+puntiPortfolioEl.forEach(punto => {
+  punto.addEventListener("click", () => mostraSlidePortfolio(Number(punto.dataset.indice)));
+});
 
 // ---- CONTATTI E INFORMAZIONI ----
 const c = cvData.contatti;
